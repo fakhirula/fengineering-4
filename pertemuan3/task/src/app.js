@@ -3,7 +3,7 @@
  * Import fungsi formatUser, findByName, fildetByMajor
  * dari file controllers/UserController.js
  */
-import { formatUser, findByName, filterByMajor } from "./controllers/UserController";
+import { formatUser, findByName, filterByMajor } from "../controllers/UserController.js";
 
 /**
  * Fungsi Main.

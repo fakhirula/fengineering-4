@@ -16,11 +16,11 @@ function Main() {
 
 function Home() {
   return (
-    <div>
+    <>
       <Navbar />
       <Main />
       <Footer />
-    </div>
+    </>
   );
 }
 

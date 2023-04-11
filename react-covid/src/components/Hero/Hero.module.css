@@ -1,6 +1,6 @@
 /* Small Screen */
 .container {
-  margin: 1rem;
+  padding: 1rem;
 }
 
 .hero {
@@ -55,13 +55,12 @@
     align-items: center;
     padding: +0.5rem;
   }
-  
-  .hero__left {
-    margin-bottom: 1rem;
-    text-align: left;
-  }
+}
 
-  .hero__right {
-    flex-basis: 60%;
+/* Large Screen */
+@media (min-width: 992px) {
+  .container {
+    padding: 0.8rem 8rem;
+    margin: 0 auto;
   }
 }

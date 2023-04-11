@@ -35,6 +35,7 @@
 
 /* Medium Screen */
 @media (min-width: 768px) {
+
   .navbar {
     flex-direction: row;
     justify-content: space-between;
@@ -54,8 +55,7 @@
 
 /* Large Screen */
 @media (min-width: 992px) {
-  /* 
-   * Nothing TODO HERE.
-   * We haven't styling Navbar.
-   */
+  .container {
+    padding: 0.8rem 5rem;
+  }
 }

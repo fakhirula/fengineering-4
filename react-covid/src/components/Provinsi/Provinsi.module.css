@@ -1,0 +1,42 @@
+/* Small Screen */
+.container {
+  padding: 1rem;
+}
+
+.provinsi {
+    text-align: center;
+}
+
+.provinsi__title {
+    color: #80ec9c;
+}
+
+.provinsi__tagline {
+    color: #118AB2;
+}
+
+table {
+    margin: 2.5rem auto;
+}
+
+td {
+    padding: 1rem 2rem;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+/* Medium Screen */
+@media (min-width: 768px) {
+  
+}
+
+/* Large Screen */
+@media (min-width: 992px) {
+  /* 
+   * Nothing TODO HERE.
+   * We haven't styling Navbar.
+   */
+}

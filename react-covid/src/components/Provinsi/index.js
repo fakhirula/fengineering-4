@@ -8,7 +8,7 @@ function Provinsi(props) {
           <h1 id="provinsi" className={styles.provinsi__title}>
             Provinsi
           </h1>
-          <h3 className={styles.provinsi__desc}>
+          <h3 className={styles.provinsi__tagline}>
             Data Covid Berdasarkan Provinsi
           </h3>
         </div>

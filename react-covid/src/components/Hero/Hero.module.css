@@ -1,0 +1,67 @@
+/* Small Screen */
+.container {
+  margin: 1rem;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero__left {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.hero__title {
+  color: #80ec9c;
+  font-size: 2.5rem;
+}
+
+.hero__tagline {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #118AB2;
+}
+
+.hero__desc {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #1c3434;
+}
+
+.hero__button {
+  padding: 1rem 2rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #80ec9c;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.hero__image {
+  background-image: url(../Assets/img/logo.png);
+  max-width: 100%;
+  border-radius: 15px;
+}
+
+/* Medium Screen */
+@media (min-width: 768px) {
+  .hero {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: +0.5rem;
+  }
+  
+  .hero__left {
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+
+  .hero__right {
+    flex-basis: 60%;
+  }
+}

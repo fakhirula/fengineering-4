@@ -1,0 +1,61 @@
+/* Small Screen */
+.container {
+  background-color: #4ab4bc;
+  padding: 1rem;
+  color: #fff;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25);
+}
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar__brand {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.navbar__list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.navbar__item {
+    margin: 0 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar__item:hover {
+    color: #80ec9c;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Medium Screen */
+@media (min-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: +0.5rem;
+  }
+
+  .navbar__brand {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+  }
+
+  .navbar__list {
+    flex-direction: row;
+  }
+}
+
+/* Large Screen */
+@media (min-width: 992px) {
+  /* 
+   * Nothing TODO HERE.
+   * We haven't styling Navbar.
+   */
+}

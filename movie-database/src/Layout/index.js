@@ -5,11 +5,11 @@ import Container from "../components/Container/Container";
 function Layout(props) {
     return (
       <>
-        <Navbar></Navbar>
+        <Navbar />
         <Container>
           <main>{props.children}</main>
         </Container>
-        <Footer></Footer>
+        <Footer />
       </>
     );
 }

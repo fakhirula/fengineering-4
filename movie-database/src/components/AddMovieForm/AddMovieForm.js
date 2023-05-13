@@ -5,40 +5,35 @@ import Alert from "../Alert/Alert";
 
 function AddMovieForm(props) {
   const { movies, setMovies } = props;
-
-  const [title, setTitle] = useState('');
+  
   const [isTitleErr, setIsTitleErr] = useState(false);
-  const [date, setDate] = useState('');
   const [isDateErr, setIsDateErr] = useState(false);
-  const [poster, setPoster] = useState('');
   const [isPosterErr, setIsPosterErr] = useState(false);
-  const [type, setType] = useState('');
   const [isTypeErr, setIsTypeErr] = useState(false);
 
-
-  function handleSubmit(e) {
-    e.preventDefault();
-
+  function validate() {
     if (title === '') {
       setIsTitleErr(true);
-      return;
+      return false;
     }
-
-    if (date === '') {
+    else if (date === '') {
       setIsDateErr(true);
-      return;
+      setIsTitleErr(false);
+      return false;
     }
-
-    if (poster === '') {
+    else if (poster === '') {
       setIsPosterErr(true);
-      return;
+      setIsDateErr(false);
+      return false;
     }
-
-    if (type === '') {
-      setIsTypeErr(true);
-      return;
+    else {
+      setIsTitleErr(false);
+      setIsDateErr(false);
+      return true;
     }
-
+  }
+  
+  function addMovie() {
     const newMovie = {
       id: nanoid(10),
       title: title,
@@ -46,34 +41,35 @@ function AddMovieForm(props) {
       type: type,
       poster: poster,
     };
-
+    
     setMovies([...movies, newMovie]);
-    setTitle('');
-    setDate('');
-    setPoster('');
-    setType('');
-    setIsTitleErr(false);
-    setIsDateErr(false);
-    setIsPosterErr(false);
-    setIsTypeErr(false);
-  };
-
-  function handleTitle(e) {
-    setTitle(e.target.value);
   }
-
-  function handleDate(e) {
-    setDate(e.target.value);
+  
+  function handleSubmit(e) {
+    e.preventDefault();
+    
+    validate() && addMovie();
   }
-
-  function handlePoster(e) {
-    setPoster(e.target.value);
+  
+  function handleChange(e) {
+    const { name, value } = e.target;
+    
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
   }
+  
 
-  function handleType(e) {
-    setType(e.target.value);
-  }
+  const [formData, setFormData] = useState({
+    title: '',
+    date: '',
+    poster: '',
+    type: '',
+  });
 
+  const { title, date, poster, type } = formData;
+  
   return (
     <div className={styles.container}>
       <div className={styles.form}>
@@ -97,7 +93,8 @@ function AddMovieForm(props) {
                 type="text"
                 placeholder="Enter movie title"
                 value={title}
-                onChange={handleTitle}
+                name="title"
+                onChange={handleChange}
               />
               {isTitleErr && <Alert>Title wajib diisi</Alert>}
               <label className={styles.form__label} htmlFor="date">
@@ -107,9 +104,10 @@ function AddMovieForm(props) {
                 id="date"
                 className={styles.form__input}
                 type="text"
-                placeholder="Enter movie year"
+                placeholder="Enter movie title"
                 value={date}
-                onChange={handleDate}
+                name="date"
+                onChange={handleChange}
               />
               {isDateErr && <Alert>Date wajib diisi</Alert>}
               <label className={styles.form__label} htmlFor="poster">
@@ -118,23 +116,25 @@ function AddMovieForm(props) {
               <input
                 id="poster"
                 className={styles.form__input}
-                type="url"
-                placeholder="Enter poster url"
+                type="text"
+                placeholder="Enter movie title"
                 value={poster}
-                onChange={handlePoster}
+                name="poster"
+                onChange={handleChange}
               />
               {isPosterErr && <Alert>Poster wajib diisi</Alert>}
               <label className={styles.form__label} htmlFor="type">
                 Type Movie
               </label>
-              <select
-                id="type"
-                className={styles.form__input}
-                type="url"
-                placeholder="Enter movie type"
-                value={type}
-                onChange={handleType}
-              >
+                <select
+                  id="type"
+                  className={styles.form__input}
+                  type="url"
+                  placeholder="Enter movie type"
+                  value={type}
+                  name="type"
+                  onChange={handleChange}
+                >
                 <option value="">-- Select one --</option>
                 <option value="action">Action</option>
                 <option value="drama">Drama</option>

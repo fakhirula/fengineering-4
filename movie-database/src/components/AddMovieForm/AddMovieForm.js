@@ -6,29 +6,55 @@ import Alert from "../Alert/Alert";
 function AddMovieForm(props) {
   const { movies, setMovies } = props;
   
-  const [isTitleErr, setIsTitleErr] = useState(false);
-  const [isDateErr, setIsDateErr] = useState(false);
-  const [isPosterErr, setIsPosterErr] = useState(false);
-  const [isTypeErr, setIsTypeErr] = useState(false);
+  const [formData, setFormData] = useState({
+    title: '',
+    date: '',
+    poster: '',
+    type: '',
+  });
+
+  const [isFormErr, setIsFormErr] = useState({
+    isTitleErr: false,
+    isDateErr: false,
+    isPosterErr: false,
+    isTypeErr: false,
+  });
+
+  const { title, date, poster, type } = formData;
+  const { isTitleErr, isDateErr, isPosterErr, isTypeErr } = isFormErr;
 
   function validate() {
     if (title === '') {
-      setIsTitleErr(true);
+      setIsFormErr((prevErr) => ({ ...prevErr, isTitleErr: true }));
       return false;
-    }
-    else if (date === '') {
-      setIsDateErr(true);
-      setIsTitleErr(false);
+    } else if (date === '') {
+      setIsFormErr((prevErr) => ({
+        ...prevErr,
+        isDateErr: true,
+        isTitleErr: false,
+      }));
       return false;
-    }
-    else if (poster === '') {
-      setIsPosterErr(true);
-      setIsDateErr(false);
+    } else if (poster === '') {
+      setIsFormErr((prevErr) => ({
+        ...prevErr,
+        isPosterErr: true,
+        isDateErr: false,
+      }));
       return false;
-    }
-    else {
-      setIsTitleErr(false);
-      setIsDateErr(false);
+    } else if (type === '') {
+      setIsFormErr((prevErr) => ({
+        ...prevErr,
+        isTypeErr: true,
+        isPosterErr: false,
+      }));
+      return false;
+    } else {
+      setIsFormErr((prevErr) => ({
+        ...prevErr,
+        isTitleErr: false,
+        isDateErr: false,
+        isPosterErr: false,
+      }));
       return true;
     }
   }
@@ -53,22 +79,12 @@ function AddMovieForm(props) {
   
   function handleChange(e) {
     const { name, value } = e.target;
-    
-    setFormData({
+
+    setFormData((formData) => ({
       ...formData,
       [name]: value,
-    });
+    }));
   }
-  
-
-  const [formData, setFormData] = useState({
-    title: '',
-    date: '',
-    poster: '',
-    type: '',
-  });
-
-  const { title, date, poster, type } = formData;
   
   return (
     <div className={styles.container}>

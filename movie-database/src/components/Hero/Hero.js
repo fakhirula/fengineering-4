@@ -4,8 +4,6 @@ import styles from "./Hero.module.css";
 function Hero() {
     const [movie, setMovie] = useState("");
 
-    
-
     useEffect(() => {
         async function fetchMovie() {
           const url = 'https://www.omdbapi.com/?apikey=fcf50ae6&i=tt2975590';

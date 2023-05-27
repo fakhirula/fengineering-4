@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import styles from "./Hero.module.css";
 
+import Button from "../ui/Button/Button";
+
 function Hero() {
     const [movie, setMovie] = useState("");
 
@@ -28,7 +30,7 @@ function Hero() {
               <p className={styles.hero__description}>
                 {movie.Plot}
               </p>
-              <button className={styles.hero__button}>Watch</button>
+              <Button variant="primary">Watch</Button>
             </div>
             <div className={styles.hero__right}>
               <img

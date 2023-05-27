@@ -3,6 +3,8 @@ import styles from './AddMovieForm.module.css';
 import { nanoid } from 'nanoid';
 import Alert from "../Alert/Alert";
 
+import Button from "../ui/Button/Button";
+
 function AddMovieForm(props) {
   const { movies, setMovies } = props;
   
@@ -159,7 +161,7 @@ function AddMovieForm(props) {
               </select>
               {isTypeErr && <Alert>Type wajib diisi</Alert>}
             </div>
-            <button className={styles.form__button}>Submit</button>
+            <Button variant="primary" full>Submit</Button>
           </form>
         </div>
       </div>

@@ -32,7 +32,7 @@
 }
 
 .form__input {
-  width: 80%;
+  width: 100%;
   display: block;
   border: none;
   border-bottom: 1px solid #808080;

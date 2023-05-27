@@ -161,7 +161,7 @@ function AddMovieForm(props) {
               </select>
               {isTypeErr && <Alert>Type wajib diisi</Alert>}
             </div>
-            <Button variant="primary" full>Submit</Button>
+            <Button variant="primary" size="md" full>Submit</Button>
           </form>
         </div>
       </div>

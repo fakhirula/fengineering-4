@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import styles from "./Hero.module.css";
+import StyledHero from "./StyledHero";
 
 import Button from "../ui/Button/Button";
 
@@ -19,30 +19,28 @@ function Hero() {
         fetchMovie()
     }, []);
 
-    return (
-      <div className={styles.hero__bg}>
-        <div className={styles.hero__bgimage}></div>
-        <div className={styles.container}>
-          <div className={styles.hero}>
-            <div className={styles.hero__left}>
-              <h2 className={styles.hero__title}>{movie.Title}</h2>
-              <p className={styles.hero__genre}>{movie.Genre}</p>
-              <p className={styles.hero__description}>
-                {movie.Plot}
-              </p>
-              <Button variant="primary">Watch</Button>
+  return (
+    <StyledHero>
+        <div className="hero__bgimage"></div>
+        <div className="container">
+          <div className="hero">
+            <div className="hero__left">
+              <h2>{movie.Title}</h2>
+              <h3>{movie.Genre}</h3>
+              <p>{movie.Plot}</p>
+              <Button variant="primary" size="md">Watch</Button>
             </div>
-            <div className={styles.hero__right}>
+            <div className="hero__right">
               <img
-                className={styles.hero__image}
+                className="hero__image"
                 src={movie.Poster}
                 alt={movie.Title}
               />
             </div>
           </div>
         </div>
-      </div>
-    );
+    </StyledHero>
+  );
 }
 
 export default Hero;

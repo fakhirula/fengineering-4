@@ -13,25 +13,33 @@ const Button = styled.button`
     padding: 0.8rem 2rem;
     border: none;
     border-radius: 10px;
-    background-color: #e50914;
+    background-color: ${({ theme, variant }) =>
+        variant ? theme.colors[variant] : theme.colors.primary};
     color: #f5f5f1;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+    font-size: ${({ theme, size }) =>
+        size ? theme.sizes[size] : theme.sizes.md};
 
-    background-color: ${function (props) {
-        if (props) {
-            return props.theme.colors[props.variant];
-        } else {
-            return props.theme.colors.primary;
-        }
-    }};
-    
-    ${function (props) {
-    return props.full && css`
+    ${({ full }) =>
+        full &&
+        css`
         width: 100%;
-        display: block;`
-    }};
-    
+        display: block;
+        `}
+
+    ${({ sm }) =>
+        sm &&
+        css`
+        padding: 0.2rem 0.5rem;
+        `}
+
+    ${({ size, theme }) =>
+        size &&
+        css`
+        padding: 0.5rem ${theme.sizes[size]};
+        `}
+
     &:hover {
         background-color: #b81d24;
         transition: all 0.3s ease-in-out;

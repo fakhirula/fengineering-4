@@ -37,7 +37,7 @@ function Hero() {
         <div className="hero">
           <div className="hero__left">
             <h2>{movie.title}</h2>
-            <h3>{movie.Genre}</h3>
+            <h3>{genres}</h3>
             <p>{movie.overview}</p>
             <Button as="a" href={`https://youtube.com/watch?v=${idTrailer}`} target="_blank"
               variant="primary" size="md">

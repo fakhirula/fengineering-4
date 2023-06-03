@@ -7,12 +7,11 @@ const StyledMovie = styled.div`
         border-radius: 25px;
         max-width: 100%;
         height: auto;
-        margin-bottom: 1rem;
     }
 
     h3 {
         color: #e50914;
-        font-size: 1.95rem;
+        font-size: 1.5rem;
         margin-bottom: 0.5rem;
     }
 

@@ -19,7 +19,7 @@ const StyledHero = styled.div`
     h2 {
         color: #e50914;
         margin-bottom: 1rem;
-        font-size: 2.44rem;
+        font-size: 3rem;
     }
 
     h3 {
@@ -85,7 +85,7 @@ const StyledHero = styled.div`
         }
 
         .hero__left {
-        flex-basis: 40%;
+        flex-basis: 50%;
         }
     }
 `;

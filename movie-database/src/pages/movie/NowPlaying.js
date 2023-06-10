@@ -22,7 +22,7 @@ function NowPlaying() {
     return (
       <>
         <Movies
-          title={'Now Playing Movie'}
+          title="Now Playing Movie"
           movies={movies}
           setMovies={setMovies}
         />

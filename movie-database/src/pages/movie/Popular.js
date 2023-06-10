@@ -21,7 +21,7 @@ function Popular() {
 
     return (
       <>
-        <Movies title={"Popular Movies"} movies={movies} setMovies={setMovies} />
+        <Movies title="Popular Movies" movies={movies} setMovies={setMovies} />
       </>
     );
 }

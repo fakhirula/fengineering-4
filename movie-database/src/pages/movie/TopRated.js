@@ -21,7 +21,7 @@ function TopRated() {
 
     return (
       <>
-        <Movies title={"Top Rated Movies"} movies={movies} setMovies={setMovies} />
+        <Movies title="Top Rated Movies" movies={movies} setMovies={setMovies} />
       </>
     );
 }

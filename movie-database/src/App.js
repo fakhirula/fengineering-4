@@ -9,7 +9,6 @@ import Layout from './Layout';
 
 import { ThemeProvider } from 'styled-components';
 import theme from "./utils/constants/theme";
-// import Counter from './components/Counter/Counter';
 
 function App() {
     return (

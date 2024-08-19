@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import { BrowserRouter } from "react-router-dom";
 
+import { Analytics } from "@vercel/analytics/react"
+
 import { Provider } from 'react-redux';
 import store from './store';
 
